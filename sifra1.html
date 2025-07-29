@@ -16,7 +16,6 @@
       border: 1px solid limegreen;
       padding: 5px;
       font-family: monospace;
-      transition: border-color 0.3s ease;
     }
     button {
       background-color: limegreen;
@@ -27,26 +26,30 @@
       font-weight: bold;
       margin-left: 10px;
     }
-    button:hover {
-      background-color: #a0d000;
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: yellowgreen;
     }
   </style>
 </head>
 <body>
   <h1>Šifra 1</h1>
-  <pre>83 108 117 110 101 99 110 105 32 115 111 117 115 116 97 118 97</pre>
+  <p>Zadejte kód šifry:</p>
+  <input type="text" id="codeInput" placeholder="Zadejte kód" autocomplete="off" />
+  <button onclick="checkCode()">Ověřit</button>
   
-  <input type="text" id="answerInput" placeholder="Zadej kód" autocomplete="off" />
-  <button onclick="checkAnswer()">Ověřit</button>
-  
+  <div id="result"></div>
+
   <script>
-    function checkAnswer() {
-      const input = document.getElementById('answerInput');
-      if (input.value.trim().toLowerCase() === 'slunecni soustava') {
-        input.style.borderColor = 'yellowgreen';
-        alert('Přístup povolen');
+    function checkCode() {
+      const input = document.getElementById('codeInput').value.trim();
+      const resultDiv = document.getElementById('result');
+      if (input === '25094') {
+        resultDiv.textContent = 'Sluneční soustava';
       } else {
-        input.style.borderColor = 'red';
+        resultDiv.textContent = '';
+        alert('Špatný kód, zkuste to znovu.');
       }
     }
   </script>
