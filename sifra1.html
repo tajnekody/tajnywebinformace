@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Šifra 1</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #00ff00;
+      font-family: monospace;
+      padding: 30px;
+      text-align: center;
+    }
+    input, button {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 18px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🕵 Šifra č. 1</h1>
+  <p>Rozlušti tuto zakódovanou zprávu (ASCII):</p>
+
+  <div style="margin: 20px; font-size: 20px;">
+    <code>83 108 117 110 101 99 110 105 32 115 111 117 115 116 97 118 97</code>
+  </div>
+
+  <p>Nápověda: převedením čísel na znaky (ASCII) dostaneš odpověď.</p>
+
+  <p>Zadej odpověď (bez háčků, malými písmeny):</p>
+
+  <input type="text" id="answerInput" placeholder="např. slunecni soustava">
+  <button onclick="checkAnswer()">Ověřit</button>
+
+  <div id="correct" class="hidden">
