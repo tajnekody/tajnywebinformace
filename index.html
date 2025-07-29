@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Tajný Web</title>
+  <style>
+    body {
+      background-color: black;
+      color: limegreen;
+      font-family: monospace;
+      text-align: center;
+      padding: 50px;
+    }
+    input, button {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 18px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vítej na tajném webu</h1>
+  <p>Zadej přístupový kód pro pokračování:</p>
+
+  <input type="text" id="codeInput" placeholder="Zadej kód">
+  <button onclick="checkCode()">Ověřit</button>
+
+  <div id="secretContent" class="hidden">
+    <h2>✔ Přístup povolen</h2>
+    <p>Operace informace395 aktivována.</p>
+    <a href="sifra1.html" style="color:limegreen;">→ Pokračuj na první šifru</a>
+  </div>
+
+  <div id="failMessage" class="hidden">
+    <p style="color:red;">⛔ Nesprávný kód. Zkuste to znovu.</p>
+  </div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById('codeInput').value.trim();
+      if (input === 'informace395') {
+        document.getElementById('secretContent').classList.remove('hidden');
+        document.getElementById('failMessage').classList.add('hidden');
+      } else {
+        document.getElementById('failMessage').classList.remove('hidden');
+        document.getElementById('secretContent').classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
